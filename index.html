@@ -667,7 +667,11 @@ function renderKit(){
       <button class="segbtn ${kitSeg==='hf'?'on':''}" data-s="hf">万能话术 ${DATA.hfs.length}</button>
       <button class="segbtn ${kitSeg==='sop'?'on':''}" data-s="sop">SOP ${DATA.sops.length}</button>
     </div>
-    <div id="kitBody"></div>`;
+    <div id="kitBody"></div>
+    <div class="card sec" style="text-align:center;margin-top:18px">
+      <p style="font-size:13px;color:var(--muted)">想角色扮演练一遍？去配套的话术训练营（68 场景 + 闯关考核）</p>
+      <p style="margin-top:8px"><a href="https://felixm-cvs.github.io/script-cvs/" target="_blank" style="color:var(--ink);font-weight:650;font-size:14px">打开话术训练营 →</a></p>
+    </div>`;
   document.querySelectorAll('.segbtn').forEach(b => { b.onclick = () => { kitSeg = b.dataset.s; renderKit(); }; });
   const inp = document.getElementById('kitSearch');
   inp.addEventListener('input', () => renderKitBody(inp.value.trim()));
